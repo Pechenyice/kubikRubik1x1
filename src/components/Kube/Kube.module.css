@@ -1,0 +1,234 @@
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 768px;
+  height: 768px;
+  display: grid;
+  grid-template-rows: repeat(4, 25%);
+  grid-template-columns: repeat(4, 25%);
+}
+
+.winText {
+  width: 100%;
+  height: 100%;
+  grid-row: span 4;
+  grid-column: span 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  font-weight: bold;
+  --g-red: #d04b36;
+  --g-orange: #e36511;
+  --g-yellow: #ffba00;
+  --g-green: #00b180;
+  --g-blue: #147aab;
+  --g-indigo: #675997;
+  color: white;
+  background: -webkit-linear-gradient(
+    var(--g-red) 0%,
+    var(--g-red) 16.6666%,
+    var(--g-orange) 16.6666%,
+    var(--g-orange) 33.333%,
+    var(--g-yellow) 33.333%,
+    var(--g-yellow) 50%,
+    var(--g-green) 50%,
+    var(--g-green) 66.6666%,
+    var(--g-blue) 66.6666%,
+    var(--g-blue) 83.3333%,
+    var(--g-indigo) 83.3333%,
+    var(--g-indigo) 100%
+  );
+}
+
+.frameWrapper {
+  position: relative;
+  grid-row: 2 / 4;
+  grid-column: 2 / 4;
+}
+
+.frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: grey;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.verticalBeforeFrame {
+  position: absolute;
+  top: -50%;
+  transform: rotateX(90deg);
+}
+
+.verticalBeforeFrameAnimating {
+  animation: verticalBeforeFrameRotate 0.8s linear 0s 1 forwards;
+}
+
+@keyframes verticalBeforeFrameRotate {
+  from {
+    top: -50%;
+    transform: rotateX(90deg);
+  }
+  to {
+    top: 0%;
+    transform: rotateX(0deg);
+  }
+}
+
+.verticalAfterFrame {
+  position: absolute;
+  bottom: -50%;
+  transform: rotateX(-90deg);
+}
+
+.verticalAfterFrameAnimating {
+  animation: verticalAfterFrameRotate 0.8s linear 0s 1 forwards;
+}
+
+@keyframes verticalAfterFrameRotate {
+  from {
+    bottom: -50%;
+    transform: rotateX(-90deg);
+  }
+  to {
+    bottom: 0%;
+    transform: rotateX(0deg);
+  }
+}
+
+.horizontalBeforeFrame {
+  position: absolute;
+  left: -50%;
+  transform: rotateY(90deg);
+}
+
+.horizontalBeforeFrameAnimating {
+  animation: horizontalBeforeFrameRotate 0.8s linear 0s 1 forwards;
+}
+
+@keyframes horizontalBeforeFrameRotate {
+  from {
+    left: -50%;
+    transform: rotateY(90deg);
+  }
+  to {
+    left: 0%;
+    transform: rotateY(0deg);
+  }
+}
+
+.horizontalAfterFrame {
+  position: absolute;
+  right: -50%;
+  transform: rotateY(-90deg);
+}
+
+.horizontalAfterFrameAnimating {
+  animation: horizontalAfterFrameRotate 0.8s linear 0s 1 forwards;
+}
+
+@keyframes horizontalAfterFrameRotate {
+  from {
+    right: -50%;
+    transform: rotateY(-90deg);
+  }
+  to {
+    right: 0%;
+    transform: rotateY(0deg);
+  }
+}
+
+.mainFrame {
+}
+
+.mainFrameRotateLeft {
+  animation: mainFrameRotateLeft 0.8s linear 0s 1 forwards;
+}
+
+.mainFrameRotateTop {
+  animation: mainFrameRotateTop 0.8s linear 0s 1 forwards;
+}
+
+.mainFrameRotateRight {
+  animation: mainFrameRotateRight 0.8s linear 0s 1 forwards;
+}
+
+.mainFrameRotateBottom {
+  animation: mainFrameRotateBottom 0.8s linear 0s 1 forwards;
+}
+
+@keyframes mainFrameRotateLeft {
+  from {
+    transform: translateX(0) rotateY(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotateY(-90deg);
+  }
+}
+
+@keyframes mainFrameRotateRight {
+  from {
+    transform: translateX(0) rotateY(0deg);
+  }
+  to {
+    transform: translateX(50%) rotateY(90deg);
+  }
+}
+
+@keyframes mainFrameRotateTop {
+  from {
+    transform: translateY(0) rotateX(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotateX(-90deg);
+  }
+}
+
+@keyframes mainFrameRotateBottom {
+  from {
+    transform: translateY(0) rotateX(0deg);
+  }
+  to {
+    transform: translateY(50%) rotateX(90deg);
+  }
+}
+
+.arrowWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.arrowWrapper:hover {
+  color: blue;
+  transition: 0.2s;
+}
+
+.arrowWrapper:nth-child(1) {
+  grid-row: 2 / 4;
+  grid-column: 1 / 2;
+}
+
+.arrowWrapper:nth-child(2) {
+  grid-row: 1 / 2;
+  grid-column: 2 / 4;
+}
+
+.arrowWrapper:nth-child(3) {
+  grid-row: 2 / 4;
+  grid-column: 4 / 5;
+}
+
+.arrowWrapper:nth-child(4) {
+  grid-row: 4 / 5;
+  grid-column: 2 / 4;
+}
