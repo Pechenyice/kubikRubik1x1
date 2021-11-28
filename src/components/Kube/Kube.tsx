@@ -254,7 +254,7 @@ const Kube = () => {
         есть <span style={{ textDecoration: 'line-through' }}>два стула</span> куб, у него стороны
         перемешаны, нужно получить конфигурацию, при которой:
         <br />
-        1. В центре серый куб с именем center
+        1. В центре серый куб с именем "center"
         <br />
         2. При нажатии по кнопке "rotate kube right" кубы будут идти в порядке "horizontal
         1"-"horizontal 2"-"horizontal 3"
